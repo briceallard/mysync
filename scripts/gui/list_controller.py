@@ -15,12 +15,23 @@ class list_controller(wx.ListCtrl):
 
         self.SetColumnWidth(0, 240)
         self.SetColumnWidth(1, 80)
-        self.SetColumnWidth(2, 240)
+        self.SetColumnWidth(2, 180)
+
+        images = ['images/icon_folder.png',
+                  'images/icon_file.png',
+                  'images/icon_back.png']
+
+        self.il = wx.ImageList(16, 16)
+
+        for i in images:
+            self.il.Add(wx.Bitmap(i))
+
+        self.SetImageList(self.il, wx.IMAGE_LIST_SMALL)
 
         j = 1
 
         self.InsertItem(0, '..')
-        self.SetItemImage(0, 5)
+        self.SetItemImage(0, 2)
 
         files = os.listdir('.')
 
@@ -33,6 +44,11 @@ class list_controller(wx.ListCtrl):
             self.SetItem(j, 1, str(size) + ' B')
             self.SetItem(j, 2, time.strftime(
                 '%Y-%m-%d %H:%M', time.localtime(modf)))
+
+            if os.path.isdir(i):
+                self.SetItemImage(j, 0)
+            else:
+                self.SetItemImage(j, 1)
 
             if j % 2 == 0:
                 self.SetItemBackgroundColour(j, '#263238')

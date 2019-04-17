@@ -18,8 +18,8 @@ class mysync_frame(wx.Frame):
         p2 = list_controller(self.splitter)
         self.splitter.SplitVertically(p1, p2)
 
-        self.Bind(wx.EVT_SIZE, self.on_size)
-        self.Bind(wx.EVT_SPLITTER_DCLICK, self.on_double_click, id=300)
+        self.Bind(wx.EVT_SIZE, self.splitter_on_size)
+        self.Bind(wx.EVT_SPLITTER_DCLICK, self.splitter_on_double_click, id=300)
 
         self.sizer = wx.BoxSizer(wx.VERTICAL)
         self.sizer.Add(self.splitter, 1, wx.EXPAND)
@@ -28,20 +28,20 @@ class mysync_frame(wx.Frame):
         sb = self.CreateStatusBar()
         sb.SetStatusText(os.getcwd())
 
-        self.SetSize((1000,800))
+        self.SetSize((1000, 800))
         self.SetTitle('MySync')
         self.Centre()
 
     def on_quit(self, e):
         self.Close()
 
-    def on_size(self, e):
+    def splitter_on_size(self, e):
         size = self.GetSize()
         self.splitter.SetSashPosition(size.x / 2)
 
         e.Skip()
 
-    def on_double_click(self, e):
+    def splitter_on_double_click(self, e):
         size = self.GetSize()
         self.splitter.SetSashPosition(size.x / 2)
 
