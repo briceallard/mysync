@@ -10,7 +10,7 @@ class CreateUI(object):
         MainWindow.setWindowModality(QtCore.Qt.NonModal)
 
         # Set Sizing Requirements
-        MainWindow.resize(955, 757)
+        MainWindow.resize(1200, 757)
         sizePolicy = QtWidgets.QSizePolicy(
             QtWidgets.QSizePolicy.Minimum,
             QtWidgets.QSizePolicy.Minimum
@@ -331,7 +331,7 @@ class CreateUI(object):
         self.username.setToolTip(_translate("MainWindow", "Username for connection to server"))
         self.password_label.setText(_translate("MainWindow", "Password"))
         self.password.setToolTip(_translate("MainWindow", "Password for connection to server"))
-        self.remember.setText(_translate("MainWindow", "Remember"))
+        self.remember.setText(_translate("MainWindow", "Remember (Password will not be saved)"))
         self.connect.setToolTip(_translate("MainWindow", "Connect to server"))
         self.connect.setText(_translate("MainWindow", "Connect"))
         self.hostname_label.setText(_translate("MainWindow", "Hostname"))
