@@ -357,7 +357,3 @@ if __name__ == "__main__":
     ui.create_ui(MainWindow)
     MainWindow.show()
     sys.exit(app.exec_())
-else:
-    from scripts.gui import tree_controller as TC
-
-    TC.TreeController()
