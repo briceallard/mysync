@@ -58,25 +58,25 @@ class CreateUI(object):
         ##################################################
         sync_to_local_icon = QtGui.QIcon()
         sync_to_local_icon.addPixmap(
-            QtGui.QPixmap("./images/icons/arrow-back_white.svg"),
+            QtGui.QPixmap("./images/icons/arrow-back.svg"),
             QtGui.QIcon.Normal,
             QtGui.QIcon.Off
         )
         sync_to_remote_icon = QtGui.QIcon()
         sync_to_remote_icon.addPixmap(
-            QtGui.QPixmap("./images/icons/arrow-forward_white.svg"),
+            QtGui.QPixmap("./images/icons/arrow-forward.svg"),
             QtGui.QIcon.Normal,
             QtGui.QIcon.Off
         )
         sync_to_both_icon = QtGui.QIcon()
         sync_to_both_icon.addPixmap(
-            QtGui.QPixmap("./images/icons/swap_white.svg"),
+            QtGui.QPixmap("./images/icons/swap.svg"),
             QtGui.QIcon.Normal,
             QtGui.QIcon.Off
         )
         refresh_icon = QtGui.QIcon()
         refresh_icon.addPixmap(
-            QtGui.QPixmap("./images/icons/sync_white.svg"),
+            QtGui.QPixmap("./images/icons/sync.svg"),
             QtGui.QIcon.Normal,
             QtGui.QIcon.Off
         )
